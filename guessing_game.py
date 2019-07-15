@@ -4,13 +4,18 @@ from random import randint
 
 def start_game():
     guesses = 0
+    _min = 1
+    _max = 50
     print("***Number Guessing Game***")
 
-    random_number = randint(1, 50)
+    random_number = randint(_min, _max)
     while True:
         try:
             user_number = int(input("Guess a number: "))
-            guesses += 1
+
+            if user_number < _min or user_number > _max: 
+                print("Input is out of range\n")
+                continue
 
             if user_number == random_number: break
             else:
@@ -19,6 +24,8 @@ def start_game():
         except ValueError: 
             print("Only integers are allowed\n")
             continue
+
+        guesses += 1
         print()
 
     print("You got it! The number was {}".format(random_number))
