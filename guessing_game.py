@@ -8,13 +8,17 @@ def start_game():
 
     random_number = randint(1, 50)
     while True:
-        user_number = int(input("Guess a number: "))
-        guesses += 1
+        try:
+            user_number = int(input("Guess a number: "))
+            guesses += 1
 
-        if user_number == random_number: break
-        else:
-            if user_number > random_number: print("It's lower")
-            else: print("It's higher")
+            if user_number == random_number: break
+            else:
+                if user_number > random_number: print("It's lower")
+                else: print("It's higher")
+        except ValueError: 
+            print("Only integers are allowed\n")
+            continue
         print()
 
     print("You got it! The number was {}".format(random_number))
