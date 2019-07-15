@@ -31,6 +31,7 @@ def start_game():
                     guesses = 0
                     print()
                     continue
+                else: print("\nThanks for playing!")
         except ValueError: 
             print("Only integers are allowed\n")
             continue
