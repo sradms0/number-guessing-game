@@ -59,8 +59,6 @@ def start_game():
                 guesses = 0
                 message = ""
                 clear_screen()
-            else: print("\nThanks for playing!")
-
         # check input further
         else:
             # validate numeric input
@@ -70,5 +68,7 @@ def start_game():
             # provide hints
             elif user_number > random_number: message = "It's lower"
             elif user_number < random_number: message = "It's higher"
+
+    print("Thanks for playing!\n")
 
 if __name__ == '__main__': start_game()
