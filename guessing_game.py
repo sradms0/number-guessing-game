@@ -9,5 +9,9 @@ def start_game():
     while True:
         user_number = int(input("Guess a number: "))
         if user_number == random_number: break
-
+        else:
+            if user_number > random_number: print("It's lower")
+            else: print("It's higher")
+        print()
+    
 if __name__ == '__main__': start_game()
