@@ -9,6 +9,8 @@ def start_game():
     random_number = randint(_min, _max)
     user_number = 0
     guesses = 0
+    best_score = 0
+    play_count = 0
 
     while random_number != user_number:
         try:
@@ -17,18 +19,25 @@ def start_game():
             if user_number < _min or user_number > _max: 
                 print("Input is out of range\n")
                 continue
-            if user_number > random_number: print("It's lower")
+
+            elif user_number > random_number: print("It's lower")
             elif user_number < random_number: print("It's higher")
             guesses += 1
 
-            if user_number == random_number: 
+            elif user_number == random_number: 
                 print("You got it! The number was {}".format(random_number))
                 print("It took you {} guess(es)".format(guesses))
                 play_again = input("Play again? [Y/N]: ").lower()
+                play_count += 1
+
                 if play_again == 'y': 
+                    if play_count == 1: best_score = guesses
+                    elif guesses < best_score: best_score = guesses
+                        
                     random_number = randint(_min, _max)
                     user_number = 0
                     guesses = 0
+                    print("Best score: {}".format(best_score))
                     print()
                     continue
                 else: print("\nThanks for playing!")
