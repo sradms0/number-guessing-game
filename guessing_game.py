@@ -13,5 +13,7 @@ def start_game():
             if user_number > random_number: print("It's lower")
             else: print("It's higher")
         print()
+
+    print("You got it! The number was {}".format(random_number))
     
 if __name__ == '__main__': start_game()
