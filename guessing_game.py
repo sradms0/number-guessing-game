@@ -25,7 +25,7 @@ def start_game():
             elif user_number < random_number: print("It's higher")
             guesses += 1
 
-            elif user_number == random_number: 
+            if user_number == random_number: 
                 # notify user of win and ask to play again
                 print("You got it! The number was {}".format(random_number))
                 print("It took you {} guess(es)".format(guesses))
