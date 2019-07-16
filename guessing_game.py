@@ -12,9 +12,9 @@ def menu(best_score, guesses, last_guess, message):
         best_score = "None"
     if last_guess == 0: 
         last_guess = "None"
-    print("Last guess: {}".format(last_guess))
-    print("Guesses: {}".format(guesses))
-    print("Best score: {}".format(best_score))
+    print(f"Last guess: {last_guess}")
+    print(f"Guesses: {guesses}")
+    print(f"Best score: {best_score}")
     print("[exit game: enter -1]")
     print()
     print(message)
@@ -46,8 +46,8 @@ def start_game():
         # user guessed right
         if user_number == random_number: 
             # notify user of win and ask to play again
-            print("You got it! The number was {}".format(random_number))
-            print("It took you {} guess(es)".format(guesses))
+            print(f"You got it! The number was {random_number}")
+            print(f"It took you {guesses} guess(es)")
             play_again = input("Play again? [Y/N]: ").lower()
             play_count += 1
 
