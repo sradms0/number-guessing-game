@@ -19,6 +19,9 @@ def menu(best_score, guesses, last_guess, message):
     print()
     print(message)
 
+def thank_you():
+    print("Thanks for playing!\n")
+
 def start_game():
     _min = 1
     _max = 50
@@ -69,10 +72,10 @@ def start_game():
             elif user_number > random_number: message = "It's lower"
             elif user_number < random_number: message = "It's higher"
 
-    print("Thanks for playing!\n")
+    thank_you()
 
 if __name__ == '__main__': 
     try: start_game()
     except KeyboardInterrupt:  
         clear_screen()
-        print("Thanks for playing!\n")
+        thank_you()
