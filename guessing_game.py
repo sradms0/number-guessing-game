@@ -71,4 +71,8 @@ def start_game():
 
     print("Thanks for playing!\n")
 
-if __name__ == '__main__': start_game()
+if __name__ == '__main__': 
+    try: start_game()
+    except KeyboardInterrupt:  
+        clear_screen()
+        print("Thanks for playing!\n")
