@@ -70,7 +70,7 @@ def start_game():
                 continue
             # provide hints
             elif user_number > random_number: message = "It's lower"
-            elif user_number < random_number: message = "It's higher"
+            else: message = "It's higher"
 
     thank_you()
 
